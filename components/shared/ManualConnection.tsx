@@ -1,12 +1,14 @@
 import React from 'react';
 import { RiRobot3Fill } from 'react-icons/ri';
 import { FaPlusCircle } from 'react-icons/fa';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router';
+
 const ManualConnection = () => {
-  // const navigate = useNavigate()
+  const router = useRouter();
 
   return (
-    <section className="text-white py-16 px-8 md:px-16 lg:px-24">
+    <section className="container text-white py-16 px-8 md:px-16 lg:px-24">
       <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start space-y-8 lg:space-y-0">
         {/* Left Side: Manual Connection Info */}
         <div className="lg:w-1/2">
@@ -26,12 +28,12 @@ const ManualConnection = () => {
             diagnose and resolve problems efficiently, ensuring a seamless and
             secure web3 experience.
           </p>
-          {/* <button
-          className="bg-blue-600 px-6 py-3 rounded-lg hover:bg-blue-700"
-          onClick={() => navigate('/manual')}
-        >
-          Our Services
-        </button> */}
+          <button
+            className="bg-blue-600 px-6 py-3 rounded-lg hover:bg-blue-700"
+            onClick={() => router.push('/manual')}
+          >
+            Our Services
+          </button>
         </div>
 
         {/* Right Side: NFT/Avatar Display */}

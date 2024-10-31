@@ -3,13 +3,12 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { IoCloseSharp } from 'react-icons/io5';
 import { IoWallet } from 'react-icons/io5';
 import clsx from 'clsx';
-// import Button from './Button';
-// import { useNavigate } from 'react-router-dom';
+import Button from './Button';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 const Header = () => {
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  //   const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -28,7 +27,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className=" container fixed top-0 left-0 w-full flex justify-between items-center py-2 px-2 text-white z-50 shadow-lg pt-2 bg-[#0A0F1E]">
+    <header className="container left-1 right-3 fixed top-0 flex justify-between items-center text-white z-50 shadow-lg pt-1 pb-2">
       {/* Logo Section */}
       <div className="flex items-center">
         <img
@@ -43,7 +42,7 @@ const Header = () => {
         {/* <Button /> */}
         <a
           href="/manual"
-          className="hover:text-white-400 bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-400 mt-3"
+          className="hover:text-white-400  px-4 py-2 rounded-lg mt-3 bg-blue-900 hover:bg-blue-950 duration-300 text-white"
         >
           Our Services
         </a>
@@ -54,8 +53,7 @@ const Header = () => {
         {/* <button className="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700">
           Connect
         </button> */}
-        {/* <Button /> */}
-        Button Component plch
+        <ConnectButton />
       </div>
 
       {/* Mobile Menu Button */}
@@ -93,8 +91,7 @@ const Header = () => {
           {/* <button className="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700 mt-4">
             Connect
           </button> */}
-          {/* <Button /> */}
-          Button Component plch
+          <Button />
         </nav>
       </div>
     </header>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { steps } from './constants';
+import { steps } from '../constants';
 
 const Services = () => {
   return (

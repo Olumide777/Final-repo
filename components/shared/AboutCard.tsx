@@ -1,6 +1,7 @@
 import React from 'react';
-import { about } from './constants';
-// import Button from './Button'
+import { RiRobot3Fill } from 'react-icons/ri';
+import { about } from '../constants';
+import Button from './Button';
 
 const AboutCard = () => {
   return (
@@ -18,7 +19,9 @@ const AboutCard = () => {
               <div className="mt-1 m-5">
                 <h2 className=" text-white pt-20">{about.subTitle}</h2>
               </div>
-              <div className="mt-20 pb-10">{/* <Button /> */}</div>
+              <div className="mt-20 pb-10">
+                <Button />
+              </div>
             </div>
           </div>
         ))}

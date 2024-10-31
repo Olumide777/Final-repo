@@ -1,5 +1,5 @@
 import React from 'react';
-import { faq } from './constants';
+import { faq } from '../constants';
 
 const Faq = () => {
   return (

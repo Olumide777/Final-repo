@@ -1,7 +1,7 @@
 import React from 'react';
-import { services } from './constants';
+import { services } from '../constants';
 
-const manualCard = () => {
+const ManualCard = () => {
   return (
     <div className="container box-border">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -32,4 +32,4 @@ const manualCard = () => {
   );
 };
 
-export default manualCard;
+export default ManualCard;

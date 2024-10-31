@@ -1,7 +1,6 @@
 import { CssBaseline, GeistProvider } from '@geist-ui/core';
 import type { AppProps } from 'next/app';
 import NextHead from 'next/head';
-import GithubCorner from 'react-github-corner';
 // @ts-ignore
 import '../styles/globals.css';
 
@@ -49,30 +48,26 @@ const App = ({ Component, pageProps }: AppProps) => {
 
   if (!isMounted) return null;
   return (
-    <>
-      <GithubCorner
-        href="https://github.com/dawsbot/drain"
-        size="140"
-        bannerColor="#e056fd"
-      />
-
-      <WagmiConfig config={wagmiConfig}>
-        <RainbowKitProvider coolMode chains={chains}>
-          <NextHead>
-            <title>Drain</title>
-            <meta
-              name="description"
-              content="Send all tokens from one wallet to another"
-            />
-            <link rel="icon" href="/favicon.ico" />
-          </NextHead>
-          <GeistProvider>
-            <CssBaseline />
-            <Component {...pageProps} />
-          </GeistProvider>
-        </RainbowKitProvider>
-      </WagmiConfig>
-    </>
+    <html>
+      <body className="bg-s1">
+        <WagmiConfig config={wagmiConfig}>
+          <RainbowKitProvider coolMode chains={chains}>
+            <NextHead>
+              <title>Drain</title>
+              <meta
+                name="description"
+                content="Send all tokens from one wallet to another"
+              />
+              <link rel="icon" href="/favicon.ico" />
+            </NextHead>
+            <GeistProvider>
+              <CssBaseline />
+              <Component {...pageProps} />
+            </GeistProvider>
+          </RainbowKitProvider>
+        </WagmiConfig>
+      </body>
+    </html>
   );
 };
 
