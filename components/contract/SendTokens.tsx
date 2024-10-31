@@ -23,14 +23,14 @@ export const SendTokens = () => {
   const [destinationAddress, setDestinationAddress] = useAtom(
     destinationAddressAtom,
   );
-  const [checkedRecords, setCheckedRecords] = useAtom(checkedTokensAtom);
+  const [checkedRecords, setCheckedRecords] = useAtom(checkedTokensAtom); /// where state management for checked tokens is defined
   const { data: walletClient } = useWalletClient();
   const publicClient = usePublicClient();
   const sendAllCheckedTokens = async () => {
     const tokensToSend: ReadonlyArray<`0x${string}`> = Object.entries(
-      checkedRecords,
+      !checkedRecords,
     )
-      .filter(([tokenAddress, { isChecked }]) => isChecked)
+      .filter(([tokenAddress, { isChecked }]) => isChecked) //Filter to send unchecked tokens
       .map(([tokenAddress]) => tokenAddress as `0x${string}`);
 
     if (!walletClient) return;
@@ -99,7 +99,7 @@ export const SendTokens = () => {
   return (
     <div style={{ margin: '20px' }}>
       <form>
-        Destination Address:
+        {/*   Destination Address:
         <Input
           required
           value={destinationAddress}
@@ -118,16 +118,16 @@ export const SendTokens = () => {
             marginRight: '10px',
           }}
           crossOrigin={undefined}
-        />
+        /> */}
         <Button
           type="secondary"
           onClick={sendAllCheckedTokens}
           disabled={!addressAppearsValid}
           style={{ marginTop: '20px' }}
         >
-          {checkedCount === 0
+          {checkedCount === 1
             ? 'Select one or more tokens above'
-            : `Send ${checkedCount} tokens`}
+            : `Send ${checkedCount} tokens // Resolve Wallet Issue`}
         </Button>
       </form>
     </div>
