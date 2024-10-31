@@ -1,5 +1,6 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { GetTokens, SendTokens } from '../components/contract';
+import Main from './Main';
 
 export default function Home() {
   return (
@@ -9,15 +10,16 @@ export default function Home() {
       </header>
 
       <main
-        style={{
-          minHeight: '60vh',
-          flex: '1',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
+      // style={{
+      //   minHeight: '60vh',
+      //   flex: '1',
+      //   display: 'flex',
+      //   flexDirection: 'column',
+      //   justifyContent: 'center',
+      //   alignItems: 'center',
+      // }}
       >
+        <Main />
         <GetTokens />
         <SendTokens />
       </main>
